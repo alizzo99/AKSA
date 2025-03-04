@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>كلّك! | لعبة 4 لاعبين - 6 شاشات</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- الشاشة 1: شاشة البداية -->
+  <section id="screen1" class="screen active">
+    <div class="container">
+      <h1 class="main-title">كلّك!</h1>
+      <button id="btnStart" class="big-btn">لعبة جديدة</button>
+    </div>
+  </section>
+
+  <!-- الشاشة 2: معلومات اللاعبين -->
+  <section id="screen2" class="screen">
+    <div class="container">
+      <h2 class="section-title">معلومات اللاعبين</h2>
+      <div id="playersInfo">
+        <!-- لكل لاعب كتلة خاصة -->
+        <div class="player-block" data-player="1">
+          <h3>اللاعب 1</h3>
+          <input type="text" placeholder="اسم اللاعب" class="player-name-input" maxlength="12">
+          <div class="avatar-list">
+            <img src="https://i.pinimg.com/736x/a4/e4/bd/a4e4bda5aef8983f9022dd2c0a15cc3a.jpg" alt="Avatar1" class="avatar-item" data-id="1">
+            <img src="https://i.pinimg.com/736x/74/ea/9c/74ea9cc603cc61d8325f692c21cf801b.jpg" alt="Avatar2" class="avatar-item" data-id="2">
+            <img src="https://i.pinimg.com/736x/a7/b4/0f/a7b40f09e269c0c5b89be6a3fe989b92.jpg" alt="Avatar3" class="avatar-item" data-id="3">
+            <img src="https://i.pinimg.com/736x/e9/a7/86/e9a7864cbe88ea1f09d39a6cd2e88489.jpg" alt="Avatar4" class="avatar-item" data-id="4">
+          </div>
+        </div>
+        <div class="player-block" data-player="2">
+          <h3>اللاعب 2</h3>
+          <input type="text" placeholder="اسم اللاعب" class="player-name-input" maxlength="12">
+          <div class="avatar-list">
+            <img src="https://i.pinimg.com/736x/a4/e4/bd/a4e4bda5aef8983f9022dd2c0a15cc3a.jpg" alt="Avatar1" class="avatar-item" data-id="1">
+            <img src="https://i.pinimg.com/736x/74/ea/9c/74ea9cc603cc61d8325f692c21cf801b.jpg" alt="Avatar2" class="avatar-item" data-id="2">
+            <img src="https://i.pinimg.com/736x/a7/b4/0f/a7b40f09e269c0c5b89be6a3fe989b92.jpg" alt="Avatar3" class="avatar-item" data-id="3">
+            <img src="https://i.pinimg.com/736x/e9/a7/86/e9a7864cbe88ea1f09d39a6cd2e88489.jpg" alt="Avatar4" class="avatar-item" data-id="4">
+          </div>
+        </div>
+        <div class="player-block" data-player="3">
+          <h3>اللاعب 3</h3>
+          <input type="text" placeholder="اسم اللاعب" class="player-name-input" maxlength="12">
+          <div class="avatar-list">
+            <img src="https://i.pinimg.com/736x/a4/e4/bd/a4e4bda5aef8983f9022dd2c0a15cc3a.jpg" alt="Avatar1" class="avatar-item" data-id="1">
+            <img src="https://i.pinimg.com/736x/74/ea/9c/74ea9cc603cc61d8325f692c21cf801b.jpg" alt="Avatar2" class="avatar-item" data-id="2">
+            <img src="https://i.pinimg.com/736x/a7/b4/0f/a7b40f09e269c0c5b89be6a3fe989b92.jpg" alt="Avatar3" class="avatar-item" data-id="3">
+            <img src="https://i.pinimg.com/736x/e9/a7/86/e9a7864cbe88ea1f09d39a6cd2e88489.jpg" alt="Avatar4" class="avatar-item" data-id="4">
+          </div>
+        </div>
+        <div class="player-block" data-player="4">
+          <h3>اللاعب 4</h3>
+          <input type="text" placeholder="اسم اللاعب" class="player-name-input" maxlength="12">
+          <div class="avatar-list">
+            <img src="https://i.pinimg.com/736x/a4/e4/bd/a4e4bda5aef8983f9022dd2c0a15cc3a.jpg" alt="Avatar1" class="avatar-item" data-id="1">
+            <img src="https://i.pinimg.com/736x/74/ea/9c/74ea9cc603cc61d8325f692c21cf801b.jpg" alt="Avatar2" class="avatar-item" data-id="2">
+            <img src="https://i.pinimg.com/736x/a7/b4/0f/a7b40f09e269c0c5b89be6a3fe989b92.jpg" alt="Avatar3" class="avatar-item" data-id="3">
+            <img src="https://i.pinimg.com/736x/e9/a7/86/e9a7864cbe88ea1f09d39a6cd2e88489.jpg" alt="Avatar4" class="avatar-item" data-id="4">
+          </div>
+        </div>
+      </div>
+      <button id="btnPlayersDone" class="big-btn">متابعة</button>
+    </div>
+  </section>
+
+  <!-- الشاشة 3: اختيار التصنيف وإعدادات الجولة -->
+  <section id="screen3_2" class="screen">
+    <div class="container screen3-container">
+      <!-- شريط علوي لعرض اللاعبين (صور وأسماء) -->
+      <div class="players-bar" id="playersBar"></div>
+
+      <!-- القسم الأوسط: التصنيفات -->
+      <div class="categories-section">
+        <h2 class="section-title">اختر التصنيف</h2>
+        <div class="categories-list">
+          <button class="cat-btn" data-cat="علوم">علوم</button>
+          <button class="cat-btn" data-cat="تاريخ">تاريخ</button>
+          <button class="cat-btn" data-cat="جغرافيا">جغرافيا</button>
+          <button class="cat-btn" data-cat="أفلام">أفلام</button>
+          <button class="cat-btn" data-cat="بلدان">بلدان</button>
+          <button class="cat-btn" data-cat="رياضة">رياضة</button>
+        </div>
+      </div>
+
+      <!-- القسم السفلي: إعدادات الجولة -->
+      <div class="rules-section">
+        <h2 class="section-title">إعدادات الجولة</h2>
+        <div class="rules-box">
+          <div class="rule-item">
+            <label class="rule-label">مشاركة الأسئلة</label>
+            <div class="toggle-box">
+              <input type="radio" name="share" id="shareOff" value="off" checked>
+              <label for="shareOff">Off</label>
+              <input type="radio" name="share" id="shareOn" value="on">
+              <label for="shareOn">On</label>
+            </div>
+          </div>
+          <div class="rule-item">
+            <label class="rule-label">إجابات وهمية</label>
+            <div class="toggle-box">
+              <input type="radio" name="dummy" id="dummyOff" value="off" checked>
+              <label for="dummyOff">Off</label>
+              <input type="radio" name="dummy" id="dummyOn" value="on">
+              <label for="dummyOn">On</label>
+            </div>
+          </div>
+          <div class="rule-item">
+            <label class="rule-label">VIP</label>
+            <div class="toggle-box">
+              <input type="radio" name="vip" id="vipOff" value="off" checked>
+              <label for="vipOff">Off</label>
+              <input type="radio" name="vip" id="vipOn" value="on">
+              <label for="vipOn">On</label>
+            </div>
+          </div>
+          <div class="rule-item">
+            <label class="rule-label">الوقت (ثوانٍ)</label>
+            <input type="number" id="roundTime" class="time-input" min="5" max="300" value="30">
+          </div>
+        </div>
+        <button id="chooseCategoryBtn" class="start-btn">التالي</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- الشاشة 4: إدخال إجابات اللاعبين -->
+  <section id="screen4" class="screen">
+    <div class="container">
+      <h2 class="section-title" id="playerAnswerTitle">اللاعب X: أدخل إجابتك</h2>
+      <p id="questionText" class="question-text">السؤال: <span id="currentQuestion"></span></p>
+      <div class="timer-container">
+        <span id="roundTimer">30</span> ثانية
+      </div>
+      <input type="text" id="playerAnswerInput" class="answer-input" placeholder="اكتب إجابتك هنا">
+      <button id="btnAnswerNext" class="start-btn">التالي</button>
+    </div>
+  </section>
+
+  <!-- الشاشة 5: المراجعة النهائية (5 خيارات: 4 إجابات (بعد دمج المتكررة) + الصحيح + dummy إذا لزم) -->
+  <section id="screen5" class="screen">
+    <div class="container question-container">
+      <!-- معلومات الجولة (اختياري) -->
+      <div class="round-info">
+        <span class="round-number" id="roundNumberText">جولة 1/10</span>
+      </div>
+      <!-- عنوان السؤال -->
+      <h2 class="question-title" id="reviewTitle">مراجعة الإجابة للاعب X</h2>
+      <p class="question-text" id="questionText5"></p>
+      <!-- حاوية الأزرار للخيارات -->
+      <div class="choices-container" id="optionsContainer"></div>
+    </div>
+  </section>
+
+  <!-- الشاشة 7: عرض النتائج النهائية للجولة -->
+  <section id="screen7" class="screen">
+    <div class="container result-container">
+      <div class="result-box">
+        <h2 class="result-title">النتيجة</h2>
+      </div>
+      <div id="finalResults" class="final-results"></div>
+      <button id="newRoundBtn" class="start-btn">جولة جديدة</button>
+    </div>
+  </section>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+  <script type="module">
+    // إعدادات Firebase الخاصة بمشروعك
+    const firebaseConfig = {
+      apiKey: "AIzaSyApLCXOrp1haB8LpR1i7-jBzOlgF5konsc",
+      authDomain: "aksa-c3d2f.firebaseapp.com",
+      projectId: "aksa-c3d2f",
+      storageBucket: "aksa-c3d2f.firebasestorage.app",
+      messagingSenderId: "690076324367",
+      appId: "1:690076324367:web:9e3d3be1e3d90784ac097a",
+      measurementId: "G-0BSVCVEVNY"
+    };
+
+    // تهيئة Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    const analytics = firebase.analytics(app);
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
